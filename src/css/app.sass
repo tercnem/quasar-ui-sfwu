@@ -1,0 +1,92 @@
+// app global css in Sass form
+.sticky-header-last-column
+  /* height or max-height is important */
+  max-height: 70vh
+
+  /* specifying max-width so the example can
+    highlight the sticky column on any browser window */
+  max-width: 100vw
+
+  td:last-child
+    /* bg color is important for td; just specify one */
+    background-color: #ffffff
+
+  tr th
+    position: sticky
+    /* higher than z-index for td below */
+    z-index: 2
+    /* bg color is important; just specify one */
+    background: #ffffff
+
+  /* this will be the loading indicator */
+  thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px
+    /* highest z-index */
+    z-index: 3
+  thead tr:first-child th
+    top: 0
+    z-index: 1
+  tr:last-child th:last-child
+    /* highest z-index */
+    z-index: 3
+
+  td:last-child
+    z-index: 1
+
+  td:last-child, th:last-child
+    position: sticky
+    right: 0
+
+  /* prevent scrolling behind sticky top row on focus */
+  tbody
+    /* height of all previous header rows */
+    scroll-margin-top: 48px
+
+.sticky-header
+  /* height or max-height is important */
+  max-height: 70vh
+
+  .q-table__top,
+  .q-table__bottom,
+  thead tr:first-child th
+    /* bg color is important for th; just specify one */
+    background-color: #ffffff
+
+  thead tr th
+    position: sticky
+    z-index: 1
+  thead tr:first-child th
+    top: 0
+
+  /* this is when the loading indicator appears */
+  &.q-table--loading thead tr:last-child th
+    /* height of all previous header rows */
+    top: 48px
+
+  /* prevent scrolling behind sticky top row on focus */
+  tbody
+    /* height of all previous header rows */
+    scroll-margin-top: 48px
+
+.sticky-last-column
+  /* specifying max-width so the example can
+    highlight the sticky column on any browser window */
+  max-width: 100vw
+
+  thead tr:last-child th:last-child
+    /* bg color is important for th; just specify one */
+    background-color: #ffffff
+
+  td:last-child
+    background-color: #ffffff
+
+  th:last-child,
+  td:last-child
+    position: sticky
+    right: 0
+    z-index: 1
+
+.bordered
+  border: 1px solid $primary
+
